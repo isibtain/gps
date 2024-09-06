@@ -297,8 +297,12 @@
     <script defer type="module" src="index.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function() {
-        if (window.location.hash === "#about") {
-          window.history.replaceState(null, null, ' ');
+        const aboutLink = document.querySelector('a[href="#about"]');
+        if (aboutLink) {
+          aboutLink.addEventListener("click", function(event) {
+            event.preventDefault();
+            document.getElementById("about").scrollIntoView({ behavior: "smooth" });
+          });
         }
       });
     </script>
