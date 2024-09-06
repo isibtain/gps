@@ -295,5 +295,12 @@
     <!-- /END Footer Section -->
 
     <script defer type="module" src="index.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        if (window.location.hash === "#about") {
+          window.history.replaceState(null, null, ' ');
+        }
+      });
+    </script>
   </body>
 </html>
